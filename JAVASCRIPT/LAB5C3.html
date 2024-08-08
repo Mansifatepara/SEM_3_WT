@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title> WAP to create a scientiƒc graphical calculator using HTML and JavaScript.(C)</title>
+</head>
+<style>
+    body {
+        font-family: Arial, sans-serif;
+        background-color: hsl(0, 0%, 94%);
+        text-align: center;
+    }
+    .calculator {
+        width: 300px;
+        margin: 50px auto;
+        background: #fff;
+        border-radius: 5px;
+        box-shadow: 0px 0px 10px 0px rgba(0,0,0,0.1);
+        padding: 20px;
+        background-color: rgb(190, 192, 182);
+    }
+    .calculator input[type="button"] {
+        width: 50px;
+        height: 50px;
+        margin: 5px;
+        font-size: 18px;
+        border: 1px solid #ccc;
+        border-radius: 5px;
+        background-color: rgb(106, 118, 224);
+    }
+    .calculator input[type="text"] {
+        width: calc(100% - 10px);
+        padding: 10px;
+        margin-bottom: 10px;
+        border: 1px solid #ccc;
+        border-radius: 5px;
+        font-size: 18px;
+        text-align: right;
+        background-color: rgb(95, 112, 225);
+    }
+</style>
+<body>
+    <div class="calculator">
+        <input type="text" id="display" readonly><br>
+        <input type="button" value="7" onclick="toDisplay('7')">
+        <input type="button" value="8" onclick="toDisplay('8')">
+        <input type="button" value="9" onclick="toDisplay('9')">
+        <input type="button" value="/" onclick="toDisplay('/')"><br>
+        <input type="button" value="4" onclick="toDisplay('4')">
+        <input type="button" value="5" onclick="toDisplay('5')">
+        <input type="button" value="6" onclick="toDisplay('6')">
+        <input type="button" value="*" onclick="toDisplay('*')"><br>
+        <input type="button" value="1" onclick="toDisplay('1')">
+        <input type="button" value="2" onclick="toDisplay('2')">
+        <input type="button" value="3" onclick="toDisplay('3')">
+        <input type="button" value="-" onclick="toDisplay('-')"><br>
+        <input type="button" value="0" onclick="toDisplay('0')">
+        <input type="button" value="." onclick="toDisplay('.')">
+        <input type="button" value="=" onclick="calculate()">
+        <input type="button" value="+" onclick="toDisplay('+')"><br>
+        <input type="button" value="(" onclick="toDisplay('(')">
+        <input type="button" value=")" onclick="toDisplay(')')">
+        <input type="button" value="C" onclick="clearDisplay()">
+        <input type="button" value="Del" onclick="deleteLast()">
+    </div>
+
+    <script>
+        function toDisplay(value) {
+            document.getElementById('display').value += value;
+        }
+
+        function clearDisplay() {
+            document.getElementById('display').value = '';
+        }
+
+        function deleteLast() {
+            var back = document.getElementById('display').value;
+            document.getElementById('display').value = back.slice(0, -1);
+        }
+
+        function calculate() {
+            let expression = document.getElementById('display').value;
+            try {
+                var result = eval(expression);
+                document.getElementById('display').value = result;
+            } catch (error) {
+                alert('Invalid expression');
+            }
+        }
+    </script>
+</body>
+</html>

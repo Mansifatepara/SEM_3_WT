@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>WAP to demonstrate change in properties of HTML element using JavaScript. (A)
+    </title>
+</head>
+<style>
+    .box {
+        width: 100px;
+        height: 100px;
+        background-color: #3498db;
+        color: #ffffff;
+        text-align: center;
+        line-height: 100px;
+        font-size: 20px;
+        transition: background-color 0.3s ease;
+    }
+</style>
+<body>
+    <div class="box" id="myBox" onclick="changeProperties()">Click Me!</div>
+
+    <script>
+        let box = document.getElementById('myBox');
+        function changeProperties() {
+            if(box = box.style.backgroundColor === '#3498db'){
+                box = box.style.backgroundColor === '#b5c849';   
+            }
+            else{
+                box.style.backgroundColor = '#e74c3c';
+            }
+        }
+    </script>
+</body>
+</html>

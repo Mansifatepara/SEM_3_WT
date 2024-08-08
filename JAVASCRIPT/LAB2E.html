@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Write a JavaScript to take 2-digit number and then separate these 2 digits, then multiply ƒrst digit by itself for second digit times.
+        (B)
+        (For example, 23 should be separated as 2 and 3. 2 should multiply with itself 3 times).</title>
+</head>
+<body>
+    <script>
+        let num = prompt("Enter a 2-digit number: ");
+        let firstDigit = Math.floor(num / 10);
+        let secondDigit = num % 10;
+        let result = Math.pow(firstDigit, secondDigit);
+        console.log("Result is: "+result);
+
+    </script>
+</body>
+</html>

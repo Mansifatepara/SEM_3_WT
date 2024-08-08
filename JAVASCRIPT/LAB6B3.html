@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>WAP to recognize which keyboard event is ƒired. (B)
+    </title>
+</head>
+<body>
+    <label>Onkeydown</label> <input onkeydown="first(event)" id="onkeydown"><br><br>
+    <label>Onkeypress</label> <input onkeypress="second(event)"><br><br>
+    <label>Onkeyup</label> <input onkeyup="third(event)">
+    <script>
+        function first(e){
+            alert(e.key);
+        }
+        function second(b){
+            alert(b.key);
+        }
+        function third(d){
+            alert(d.key);
+        }
+    </script>
+</body>
+</html>

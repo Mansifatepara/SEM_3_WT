@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Write an HTML page with JavaScript that takes a number from popup box in the range 0-999 and display it in
+        words. If the
+        number is out of range, it should show “out of range” and if it is not a number ,it should show “not a number”
+        message in the result
+        box. (A)</title>
+</head>
+
+<body>
+    <script>
+       let n= prompt("Enter a Number");
+       console.log(n);
+       if(n==null || n==0){
+        console.log("Please enter a number: ");
+       }
+       if(n<0||n>999){
+        console.log("Number is out of range!!");
+       }
+       else{
+        var units = ['Zero','One','Two','Three','Four','Five','Six','Seven','Eight','Nine'];
+        var teens = ['','Eleven','Twelve','Thirteen','Fourteen','Fifteen','Sixteen','Seventeen','Eighteen','Nineteen'];
+        var tens = ['','','Twenty','Thirty','Fourty','Fifty','Sixty','Seventy','Eighty','Ninety'];
+       
+       var result = '';
+       if(n>=100){
+        result+=units[(Math.floor(n/100))]+' Hundread ';
+        n%=100;
+       }
+       if(n>=20){
+        result+=(tens[(Math.floor(n/10))]+' ');
+        n%=10;
+       }
+       else if(n>=10){
+        result+=teens[n-10]+' ';
+        n=0;
+       }
+       if(n>0){
+        result+=units[n]+' ';
+       }
+    }
+       document.write(result.trim());
+    </script>
+</body>
+
+</html>

@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>WAP in JavaScript to make simple calculator using popup box</title>
+</head>
+<body>
+    <script>
+        var a = Number(prompt("enter the number a: "));
+        console.log(a);
+        let b = Number(prompt("enter the number b: "));
+        console.log(b);
+        let c = prompt("enter the operator: ");
+        if(c=="+"){
+            console.log(a+b);
+        }
+        if(c=="-"){
+            console.log(a-b);
+        }
+        if(c=="*"){
+            console.log(a*b);
+        }
+        if(c=="/"){
+            if(a==0){
+                console.log("Error! Division by zero is not allowed.");
+            }
+            if(b==0){
+                console.log("Error! Division by zero is not allowed.");
+            }
+            console.log(a/b);
+
+        }
+        
+    </script>
+</body>
+</html>

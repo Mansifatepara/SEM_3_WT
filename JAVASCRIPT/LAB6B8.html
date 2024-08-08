@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Write a JavaScript that handles following mouse events. Add necessary elements. (B)</title>
+</head>
+<style>
+    #heading{
+        width: 100px;
+    }
+</style>
+<body>
+    <h1 onmouseover="first()" onmouseout="second()" id="heading">Heading</h1><br><br>
+    <button onclick="third()" id="currentDate">Find me!</button><br>
+    <div id="content"></div><br><br><br>
+    <button onclick="rclick()">red</button>
+    <button onclick="gclick()">green</button>
+    <script>
+        function first(){
+            document.body.style.color = 'rgb(255,255,0)';
+        }
+        function second(){
+            document.body.style.color = '#000000';
+        }
+
+        function third(){
+            const date = new Date();
+            document.getElementById('content').innerHTML = date;
+        }
+
+        function rclick(){
+            document.body.style.backgroundColor = "red";
+        }
+        function gclick(){
+            document.body.style.backgroundColor = "green";
+        }
+    </script>
+</body>
+</html>

@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CRUd OPERATION</title>
+</head>
+<body>
+    <div class="container">
+        <h2>CRUD Operations on Array</h2>
+        <label>Enter Name</label>
+        <input type="text" id="name">
+        <button onclick="addName()">Add</button>
+    
+        <ul id="nameList"></ul>
+    </div>
+
+    <script>
+       // Initialize an empty array to store items
+        let name = [];
+        let index = i;
+
+         // Function to add an item to the array and update the list
+        function addName() {
+        let newName = document.getElementById('name').value;
+        if (newName.trim() !== '') {
+            name.push(newName);
+            updateNameList();
+            // Clear input field
+            document.getElementById('name').value = ''; 
+        }
+    }
+
+    // Function to update the displayed list of items
+    function updateNameList() {
+        let nameList = document.getElementById('nameList');
+        nameList.innerHTML = ''; // Clear existing list
+
+    }
+
+    // Function to delete a name from the array
+    function deleteName(index) {
+       name.splice(index, 1);
+        updateNameList();
+    }
+
+     // Function to edit a name in the array
+     function editName(index) {
+        let updatedName = prompt('Enter updated value:',name[index]);
+        if (updatedName !== null) {
+            items[index] = updatedName;
+            updateNameList();
+        }
+        else{
+
+        }
+    }
+    </script>
+</body>
+</html>

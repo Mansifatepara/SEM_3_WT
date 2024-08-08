@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>2.Demonstrate different array functions like push, pop, shift, unshift, splice, sort etc… (A)
+    </title>
+</head>
+<body>
+    <script>
+        Students=['Darshan','University','Rajkot','Gujarat'];
+        //push
+        Students.push('India');
+        document.write("Push : "+Students);
+        document.write("<br/>");
+
+        //pop
+        Students.pop();
+        document.write("Pop : "+Students);
+        document.write("<br/>");
+
+        //Shift
+        Students.shift();
+        document.write("Shift : "+Students);
+        document.write("<br/>");
+
+        //Unshift
+        Students.unshift('Gujarat');
+        document.write("Unshift : "+Students);
+        document.write("<br/>");
+
+        //Splice
+        Students.splice(0,1,'Marwadi');
+        document.write("Splice : "+Students);
+        document.write("<br/>");
+
+        //Slice
+        var stu = Students.slice(1,3);
+        document.write("Slice : "+stu);
+        document.write("<br/>");
+
+        //Sort
+        A=['D','B','C']
+        A.sort();
+        document.write("Sort : "+A);
+    </script>
+</body>
+</html>

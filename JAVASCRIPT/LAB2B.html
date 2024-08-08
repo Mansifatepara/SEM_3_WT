@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>WAP in JavaScript to prime number between the given range of number.</title>
+</head>
+<body>
+    <script>
+        let a = parseInt(prompt("Enter the number a: "));
+        console.log(a);
+        let n = parseInt(prompt("Enter the number n: "));
+        console.log(n);
+        let i=a;
+        for(i=a; i<=n; i++){
+            let flag = 0;
+            let j=2;
+          for(j = 2; j<i; j++){
+            if (i % j == 0) {
+            flag = 1;
+            break;
+        }
+    }  
+    if (i > 1 && flag == 0) {
+        console.log(i);
+    }
+}  
+  </script>
+</body>
+</html>
+

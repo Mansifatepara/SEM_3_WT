@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>CRUD Operations on Array</title>
+<style>
+    body {
+        font-family: Arial, sans-serif;
+        margin: 20px;
+    }
+    .container {
+        max-width: 600px;
+        margin: 0 auto;
+    }
+    button {
+        margin-top: 5px;
+    }
+</style>
+</head>
+<body>
+<div class="container">
+    <h2>CRUD Operations on Array</h2>
+    <label for="item">Enter Item:</label>
+    <input type="text" id="item">
+    <button onclick="addItem()">Add Item</button>
+
+    <ul id="itemList"></ul>
+</div>
+
+<script>
+    // Initialize an empty array to store items
+    let items = [];
+
+    // Function to add an item to the array and update the list
+    function addItem() {
+        let newItem = document.getElementById('item').value;
+        if (newItem.trim() !== '') {
+            items.push(newItem);
+            updateItemList();
+            document.getElementById('item').value = ''; // Clear input field
+        }
+    }
+
+    // Function to update the displayed list of items
+    function updateItemList() {
+        let itemList = document.getElementById('itemList');
+        itemList.innerHTML = ''; // Clear existing list
+
+        items.forEach(function(item, index) {
+            let li = document.createElement('li');
+            li.innerHTML = `${item} <button onclick="editItem(${index})">Edit</button> <button onclick="deleteItem(${index})">Delete</button>`;
+            itemList.appendChild(li);
+        });
+    }
+
+    // Function to delete an item from the array
+    function deleteItem(index) {
+        items.splice(index, 1);
+        updateItemList();
+    }
+
+    // Function to edit an item in the array
+    function editItem(index) {
+        let updatedItem = prompt('Enter updated value:', items[index]);
+        if (updatedItem !== null) {
+            items[index] = updatedItem;
+            updateItemList();
+        }
+    }
+</script>
+
+</body>
+</html>

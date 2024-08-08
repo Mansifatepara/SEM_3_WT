@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>WAP in JavaScript to print the Fibonacci series of a number.</title>
+</head>
+<body>
+    <script>
+        var a = Number(prompt("enter the number: "));
+        console.log(a);
+        var b = Number(prompt("enter the number: "));
+        console.log(b);
+        var nexterm = a+b;
+        console.log(nexterm);
+        var n = Number(prompt("enter number of terms: "));
+        for (i = 3; i <= n; ++i) {
+        console.log("Fibonacci series: " + nexterm ); 
+        a = b;
+        b = nexterm;
+        nexterm = a + b;
+      }
+
+    </script>
+</body>
+</html>

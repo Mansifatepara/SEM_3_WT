@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>WAP to change background color on click of button. (A)</title>
+</head>
+<body>
+    <button onclick="chgBG()">BG</button>
+    <button onclick="start()">start</button>
+    <button onclick="stop()">stop</button>
+    <script>
+    
+        function chgBG(){
+            a = (Math.random())*255;
+            b = (Math.random())*255;
+            c = (Math.random())*255;
+
+            document.body.style.background = "rgb("+a+" "+b+" "+c+")"
+        }
+        function start(){
+            d = setInterval(chgBG,1000);
+        }
+        function stop(){
+            clearInterval(d);
+        }
+        
+    </script>
+</body>
+</html>

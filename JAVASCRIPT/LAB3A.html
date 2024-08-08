@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Demonstrate the use of array to ƒind maximum number.</title>
+</head>
+<body>
+    <script>
+    var array = [1,0,4,7,3,7,9,8];
+    var max = array[0];
+    for(let i=1;i<=array.length;i++){
+        if(array[i]>max){
+            max = array[i];
+        }
+    }
+    document.write("Maximum In Array : "+max);
+</script>
+</body>
+</html>

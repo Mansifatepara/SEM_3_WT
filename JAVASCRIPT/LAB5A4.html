@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>4.Write a JavaScript program to validate user data given from the HTML form (A)</title>
+</head>
+<body>
+    <h2>User Regestration Form</h2>
+    <form id="regestration">
+        <label>Username (Minimum 8 characters):</label><br>
+        <input type="text" id="username" name="username" required><br><br>
+        <label>Password (8-12 characters, at least 1 digit and 1 special character):</label><br>
+        <input type="password" id="password" name="password" required><br><br>
+        <label>Repeat Password:</label><br>
+        <input type="password" id="repeatPassword" name="repeatPassword" required><br><br>
+        <label>Date of Birth:</label><br>
+        <input type="date" id="dob" name="dob" required><br><br>
+        <label>Enrollment (11 digits):</label><br>
+        <input type="text" id="enrollment" name="enrollment" required><br><br>
+        <label>Email:</label><br>
+        <input type="text" id="email" name="email" required><br><br>
+
+        <button onclick="check()">Submit</button>
+    </form>
+
+    <script>
+        function validateForm() {
+           let age= calAge();
+            var username = document.getElementById('username').value;
+            var password = document.getElementById('password').value;
+            var repeatPassword = document.getElementById('repeatPassword').value;
+            var enrollment = document.getElementById('enrollment').value;
+            var email = document.getElementById('email').value;
+            let pattern = /^[a-zA-Z0-9]{8}$/;
+            let regexp = new regexp(pattern);
+            let pattern1 = /^[\\w-_\.]*[\\w-_\.]\@[\\w]\.+[\\w]+[\\w]+[\\w]$/;
+            let regexp1 = new regexp1(pattern1);
+
+             // Validate username
+        if (username.value.trim()<8) {
+            alert("Username must be at least 8 characters long.");
+        }
+
+        //validate password
+        function check()
+        {
+            if(password.length<8 || password.length>12){
+            alert("Password must be between 8 to 12 character");
+        }
+        else if(!regexp.test(password)){
+            alert("password must be contain at least 1 special character and digit");
+        }
+    }
+
+        // Validate repeat password
+         if (password !== repeatPassword) {
+            alert("Passwords do not match.");
+            return false;
+        }
+
+        // Validate age (must be greater than 18)
+        if(age<18){
+            alert()
+        }
+
+        // Validate enrollment (must be 11 digits)
+        if(enrollment.length!=11){
+            alert("enrollment must be of 11 digits");
+        }
+
+        // Validate email
+        if(!regexp1.test(email)){
+            alert("Invalid email");
+        }
+        }
+        function calAge(){
+            let dob =new Date(document.getElementById('dob').value);
+
+            let today = new Date();
+
+            let age = today.getFullYear()-dob.getFullYear();
+            let month = today.getFullmonth()-dob.getFullmonth();
+
+            if(month<0 || month===0 && dob.getDate>today.getDate){
+                age--;
+            }
+
+            document.write(age);
+            return age;
+
+        }
+    </script>
+</body>
+</html>

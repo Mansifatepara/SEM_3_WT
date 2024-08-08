@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title> WAP to demonstrate callbacks in JavaScript. (A)
+    </title>
+</head>
+<body>
+    <script>
+        function first(){
+            console.log("Mansi");
+        }
+        function second(){
+            console.log("Fatepara");
+        }
+        
+        function diff(num1,num2,callback){
+            a = num1-num2
+            callback();
+        }
+
+    diff(50,30,first)
+    diff(50,30,second)
+    console.log(a);
+    </script>
+</body>
+</html>

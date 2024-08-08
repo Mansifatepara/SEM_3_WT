@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Demonstrate the difference between let and var. (A)</title>
+</head>
+<body>
+    <script>
+        a=10; // global variable
+        function abc(){
+            var a=20; //function scope
+            console.log("value inside:",a);
+        }
+            abc();
+            console.log("value outside:",a);
+    </script>
+</body>
+</html>

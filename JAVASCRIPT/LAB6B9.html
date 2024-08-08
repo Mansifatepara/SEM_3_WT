@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Write a JavaScript that handles following mouse events. Add necessary elements. (B)
+        JavaScript gives the key code for the key pressed.</title>
+</head>
+<body>
+    <input onkeydown="vowel(event)" placeholder="abc">
+
+    <script>
+        function vowel(e){
+
+            if(e.key == 'a'||e.key == 'e'||e.key == 'i'||e.key == 'o'||e.key == 'u'){
+                alert("Enterd Character Is Vowel")
+            }
+            else{
+                alert("Enterd Character Is Consonant"); 
+            }
+        }
+    </script>
+</body>
+</html>

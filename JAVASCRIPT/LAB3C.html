@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>WAP to read an array from the user and sort them using bubble sort.</title>
+</head>
+<body>
+    <script>
+        var array = [2,4,6,3,5,1];
+        for(var i=0;i<array.length;i++){
+            for(var j=0;j<array.length-1;j++){
+                if(array[j]>array[j+1]){
+                    temp = array[j];
+                    array[j] = array[j+1];
+                    array[j+1] = temp;
+                }
+            }
+        }
+        document.write(array);
+    </script>
+</body>
+</html>

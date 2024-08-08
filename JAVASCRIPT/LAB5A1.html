@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>WAP to create a basic graphical Calculator using HTML and JavaScript. (A)</title>
+</head>
+<style>
+    body {
+        font-family: Arial, sans-serif;
+        text-align: center;
+    }
+
+    div {
+        height: 250px;
+        background-color: rgb(166, 218, 222);
+    }
+
+    #output {
+        width: 100px;
+        background-color: rgb(232, 233, 180);
+    }
+
+    .back {
+        background-color: #d9534f;
+    }
+
+    .calculator {
+        width: 300px;
+        margin: 20px auto;
+        border: 1px solid #ccc;
+        padding: 10spx;
+        border-radius: 8px;
+        box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1);
+    }
+
+    .calculator input[type="text"] {
+        width: 100%;
+        margin-bottom: 10px;
+        padding: 10px;
+        font-size: 20px;
+        text-align: right;
+        border: 1px solid #ccc;
+        border-radius: 4px;
+    }
+
+    .calculator button {
+        width: 50px;
+        height: 30px;
+        margin: 5px;
+        font-size: 18px;
+        border: none;
+        border-radius: 4px;
+        cursor: pointer;
+    }
+
+    .calculator button.operator {
+        background-color: #f0ad4e;
+        color: white;
+    }
+
+    .calculator button.equal {
+        background-color: #5cb85c;
+        color: white;
+    }
+
+    .calculator button.clear {
+        background-color: #d9534f;
+        color: white;
+    }
+</style>
+
+<body>
+    <div class="calculator">
+        <br>
+        <input type="text" id="output">
+        <button class="clear" onclick="clearOutput('C')">C</button>
+        <button class="back" onclick="backbutton('<')"><</button><br>
+                <button onclick="toOutput('7')">7</button>
+                <button onclick="toOutput('8')">8</button>
+                <button onclick="toOutput('9')">9</button>
+                <button class="operator" onclick="toOutput('+')">+</button><br>
+                <button onclick="toOutput('4')">4</button>
+                <button onclick="toOutput('5')">5</button>
+                <button onclick="toOutput('6')">6</button>
+                <button class="operator" onclick="toOutput('-')">-</button><br>
+                <button onclick="toOutput('1')">1</button>
+                <button onclick="toOutput('2')">2</button>
+                <button onclick="toOutput('3')">3</button>
+                <button class="operator" onclick="toOutput('*')">*</button><br>
+                <button onclick="toOutput('0')">0</button>
+                <button onclick="toOutput('.')">.</button>
+                <button class="equal" onclick="calculate('=')">=</button>
+                <button class="operator" onclick="toOutput('/')">/</button>
+    </div>
+
+    <script>
+        function toOutput(value) {
+            document.getElementById('output').value += value;
+        }
+
+        function clearOutput() {
+            document.getElementById('output').value = '';
+        }
+
+        function calculate() {
+            let result = eval(document.getElementById('output').value);
+            document.getElementById('output').value = result;
+        }
+
+        function backbutton() {
+            document.getElementById('output').value = document.getElementById('output').value.slice(0, -1);
+        }
+    </script>
+    </div>
+</body>
+
+</html>
